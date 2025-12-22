@@ -1,194 +1,116 @@
-import React from "react";
-import "./Navbar.css";
+import React, { useState } from "react";
 import logo from "./Images/logo.png";
-import before from "./Images/before.jpg";
-import circle from "./Images/circle.jpg";
-import after from "./Images/after.jpg";
-import braces from "./Images/braces.jpg";
-import box from "./Images/box.jpg";
 
-function Navbar() {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="navbar">
-      <div className="nav-left">
-        <img src={logo} alt="Logo" className="nav-logo" />
-      </div>
-
-      <ul className="nav-menu">
-        <li className="nav-item dropdown">
-          About <span className="arrow">▾</span>
-          <ul className="dropdown-menu">
-            <div class="about-dropdown">
-    <div class="about-left">
-    <a href="#">Meet the Team</a>
-    <a href="#">Our Values</a>
-    </div>
-
-    <div class="about-right">
-    <img src={logo} alt="Logo" />
-    </div>
-    </div>
-          </ul>
-        </li>
-<li className="nav-item dropdown dental-dropdown">
-  Dental Problems <span className="arrow">▾</span>
-
-  <div className="dental-popup">
-    <div className="col">
-      <h3>Teeth & Gums</h3>
-      <a>Wisdom Teeth</a>
-      <a>Broken Chipped Tooth</a>
-      <a>Toothache</a>
-      <a>Receding Gums</a>
-      <a>Teeth Cleaning</a>
-      <a>Gum Disease</a>
-      <a>Teeth Grinding</a>
-      <a>Jaw Pain</a>
-      <a>Bad Breath</a>
-      <a>Sensitive & Sore Teeth</a>
-      <a>Tooth Abscess</a>
-      <a>Mouth Sores</a>
-      <a>Teeth Filling</a>
-      <a>Replacing Amalgam Fillings</a>
-      <a>Dry Mouth</a>
-    </div>
-
-    <div className="col">
-      <h3>Cosmetic<br/>Improvement</h3>
-      <a>Yellow Teeth</a>
-      <a>Missing Teeth</a>
-      <a>Worn Teeth</a>
-      <a>Crooked Teeth</a>
-
-      <div className="image-wrapper">
-        <img src={braces} alt="" />
-      </div>
-    </div>
-
-    <div className="col">
-      <h3>Common Issues</h3>
-      <a>Emergency Dentist</a>
-      <a>Dental Anxiety</a>
-      <a>Oral Cancer</a>
-
-      <div className="image-wrapper">
-        <img src={box} alt="" />
-      </div>
-    </div>
-  </div>
-</li>
+    <nav className="w-full flex justify-center fixed top-4 left-0 z-50">
+      {/* Navbar container with fully rounded ends */}
+      <div className="w-[95%] max-w-[1400px] flex items-center justify-between bg-[#d9f3ff] rounded-full shadow-md px-6 py-3">
+        
+        
+        <div className="flex-1 bg-[#102b4e] px-12 py-0 rounded-l-full">
+          <img src={logo} alt="SmileExpert" className="h-16 md:h-16" />
+        </div>
 
         
+        <ul className="hidden md:flex items-center gap-6 text-[#0f172a] font-medium">
+          {/* About */}
+          <li className="relative group cursor-pointer">
+            About <span className="ml-1">▾</span>
+            <ul className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">Our Story</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Mission & Vision</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Team</li>
+            </ul>
+          </li>
 
-        <li className="nav-item mega-parent">
-  Treatments <span className="arrow">▾</span>
+          
+          <li className="relative group cursor-pointer">
+            Dental Problems <span className="ml-1">▾</span>
+            <ul className="absolute left-0 top-full mt-2 w-44 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">Cavities</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Gum Disease</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Tooth Sensitivity</li>
+            </ul>
+          </li>
 
-  <div className="mega-menu">
-    
-    
-    <div className="mega-col">
-      <h3>Dental Services</h3>
-      <a href="#">Scaling & Polishing</a>
-      <a href="#">Fillings</a>
-      <a href="#">Emergency Dentists</a>
-      <a href="#">Exam & X-Rays Check-Up</a>
-      <a href="#">Dentures</a>
-      <a href="#">Tooth Extraction</a>
-      <a href="#">Wisdom Teeth Removal</a>
-      <a href="#">Root Canals</a>
-      <a href="#">TMJ Treatment</a>
-    </div>
+          
+          <li className="relative group cursor-pointer">
+            Treatments <span className="ml-1">▾</span>
+            <ul className="absolute left-0 top-full mt-2 w-44 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">Teeth Whitening</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Root Canal</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Dental Implants</li>
+            </ul>
+          </li>
 
-    
-    <div className="mega-col">
-      <h3>Cosmetic Dental Services</h3>
-      <a href="#">Teeth Whitening Treatment</a>
-      <a href="#">Invisalign Clear Aligners</a>
-      <a href="#">Dental Braces</a>
-      <a href="#">Dental Crowns</a>
-      <a href="#">Dental Bridge</a>
-      <a href="#">Dental Implants</a>
-      <a href="#">Dental Veneers</a>
-      <a href="#">Orthodontics</a>
-      <a href="#">Smile Makeover</a>
-    </div>
+          
+          <li className="relative group cursor-pointer">
+            Before & After <span className="ml-1">▾</span>
+            <ul className="absolute left-0 top-full mt-2 w-44 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">Smile Gallery</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Case Studies</li>
+            </ul>
+          </li>
 
-    <div className="mega-col">
-      <h3>Dental Specialists</h3>
-      <a href="#">Endodontist Services</a>
-      <a href="#">Oral & Maxillofacial Surgeon</a>
-      <a href="#">Orthodontist Specialists</a>
-      <a href="#">Pediatric Dentist</a>
-      <a href="#">Periodontist Services</a>
-      <a href="#">Prosthodontist Services</a>
+          
+          <li className="relative group cursor-pointer">
+            Patient Safety <span className="ml-1">▾</span>
+            <ul className="absolute left-0 top-full mt-2 w-44 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">Hygiene Protocols</li>
+              <li className="px-4 py-2 hover:bg-gray-100">Certified Staff</li>
+            </ul>
+          </li>
 
-      <div className="mega-img">
-        <img src={circle} alt="Dental Icon" />
+          <li className="cursor-pointer">Contact</li>
+          <li className="cursor-pointer">Blog</li>
+        </ul>
+
+        
+        <div className="hidden md:flex gap-4">
+          <button className="bg-[#0b2a4a] text-white px-6 py-2 rounded-full font-semibold">
+            Call Now
+          </button>
+          <button className="bg-[#2fb5ff] text-white px-6 py-2 rounded-full font-semibold">
+            Book Appointment
+          </button>
+        </div>
+
+      
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="focus:outline-none text-[#0f172a]">
+            {isOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
-    </div>
-
-  </div>
-</li>
-
-
-
-<li className="nav-item mega-dropdown">
-  <span className="nav-link">Before & After ▾</span>
-
-  <div className="before-after-menu">
-    <div className="ba-left">
-      <h3>Before & After</h3>
-      <ul>
-        <li>Braces — Before and After</li>
-        <li>Invisalign — Before and After</li>
-        <li>Crowns — Before and After</li>
-        <li>Veneers — Before and After</li>
-        <li>Teeth Whitening — Before and After</li>
-        <li>Dental Implants — Before and After</li>
-        <li>Dental Bonding — Before and After</li>
-      </ul>
-    </div>
-
-    <div className="ba-right">
-      <img src={before} alt="Before After" />
-    </div>
 
     
-  </div>
-</li>
-
- <li className="nav-item mega-dropdown">
-  Patient Safety <span className="arrow">▾</span>
-
-  <div className="patient-safety-menu">
-    <div className="ps-left">
-      <h3>Patient Safety</h3>
-      <ul>
-        <li>7X SAFETY</li>
-        <li>4 Step Sterilization</li>
-        <li>Safety Equipment</li>
-        <li>Equipment & Technology</li>
-        <li>Quality</li>
-      </ul>
-    </div>
-
-    <div className="ps-right">
-      <img src={after} alt="Patient Safety" />
-    </div>
-  </div>
-</li>
-
-
-        <li className="nav-item">Contact</li>
-        <li className="nav-item">Blog</li>
-      </ul>
-
-      <div className="nav-buttons">
-        <button className="btn-call">Call Now</button>
-        <button className="btn-appointment">Book Appointment</button>
-      </div>
+      {isOpen && (
+        <ul className="md:hidden bg-[#d9f3ff] rounded-b-full px-6 pb-4 space-y-2">
+          <li className="cursor-pointer">About</li>
+          <li className="cursor-pointer">Dental Problems</li>
+          <li className="cursor-pointer">Treatments</li>
+          <li className="cursor-pointer">Before & After</li>
+          <li className="cursor-pointer">Patient Safety</li>
+          <li className="cursor-pointer">Contact</li>
+          <li className="cursor-pointer">Blog</li>
+          <div className="flex gap-4 mt-2">
+            <button className="bg-[#0b2a4a] text-white px-6 py-2 rounded-full font-semibold">Call Now</button>
+            <button className="bg-[#2fb5ff] text-white px-6 py-2 rounded-full font-semibold">Book Appointment</button>
+          </div>
+        </ul>
+      )}
     </nav>
   );
 }
-
-export default Navbar;
