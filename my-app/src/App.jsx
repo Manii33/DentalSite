@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 
@@ -115,4 +116,32 @@ function App() {
   );
 }
 
+=======
+import Background from "./Components/Background";
+import Forth from "./Components/Forth";
+import Navbar from "./Components/Navbar";
+import New from "./Components/New";
+import Second from "./Components/Second";
+import Third from "./Components/Third";
+
+
+function App() {
+  return (
+    <>
+    <Navbar/>
+    <Background/>
+    <New/>
+    <Second/>
+    <Third/>
+    <Forth/>
+    
+    </>
+
+  )
+}
+  
+    
+  
+
+>>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
 export default App;

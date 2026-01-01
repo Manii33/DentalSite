@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
+<<<<<<< HEAD
     "@testing-library/react": "^16.3.0",  
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.8",
@@ -13,6 +14,14 @@
     "react-dom": "^19.2.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.10.1",
+=======
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.8",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-icons": "^5.5.0",
+>>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -20,10 +29,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+<<<<<<< HEAD
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
 
+=======
+    "eject": "react-scripts eject"
+>>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +57,7 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19"
@@ -51,5 +65,10 @@
   "engines": {
     "node": "24.x",
     "npm": "9.x"
+=======
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+>>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
   }
 }

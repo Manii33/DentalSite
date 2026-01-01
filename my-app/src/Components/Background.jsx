@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import bg from "./Images/bg.jpg"; 
 import bg1 from "./Images/bg1.jpg"; 
 import bg2 from "./Images/bg2.jpg"; 
@@ -306,3 +307,21 @@ export default function HeroSection() {
   );
 }
 
+=======
+import "./Background.css";
+import bg from "./Images/bg.jpg"; 
+
+export default function HeroSection() {
+  return (
+    <div
+      className="hero-section"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div className="hero-content">
+        <h2>Treatments</h2>
+        <h1>Yellow Teeth Treatment in Lahore</h1>
+      </div>
+    </div>
+  );
+}
+>>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
