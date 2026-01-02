@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 
@@ -38,6 +37,10 @@ import Implants from "./Components/Pages/Before&After/Implants";
 import Bonding from "./Components/Pages/Before&After/Bonding";
 import Safety from "./Components/Pages/PatientSafety/Safety";
 import StepSterilization from "./Components/Pages/PatientSafety/StepSterilization";
+import SafetyEquipment from "./Components/Pages/PatientSafety/SafetyEquipment";
+import EquipmentTechnology from "./Components/Pages/PatientSafety/EquipmentTechnology";
+
+
 
 
 
@@ -98,6 +101,10 @@ function App() {
         <Route path="/dental-bonding-before-and-after" element={<Bonding />} />
         <Route path="/7x-safety" element={<Safety />} />
         <Route path="/4-step-sterilization" element={<StepSterilization />} />
+        <Route path="/safety-equipment" element={<SafetyEquipment />} />
+        <Route path="/equipment-technology" element={<EquipmentTechnology />} />
+
+
 
 
 
@@ -116,32 +123,4 @@ function App() {
   );
 }
 
-=======
-import Background from "./Components/Background";
-import Forth from "./Components/Forth";
-import Navbar from "./Components/Navbar";
-import New from "./Components/New";
-import Second from "./Components/Second";
-import Third from "./Components/Third";
-
-
-function App() {
-  return (
-    <>
-    <Navbar/>
-    <Background/>
-    <New/>
-    <Second/>
-    <Third/>
-    <Forth/>
-    
-    </>
-
-  )
-}
-  
-    
-  
-
->>>>>>> cc6c3e06212e2b2e6da93ad06f352978f7783de7
 export default App;
